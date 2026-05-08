@@ -160,22 +160,32 @@ export default function Hero() {
           >
             <div className="absolute w-[520px] h-[520px] bg-primary/20 rounded-full blur-3xl" />
 
-            {/* Left phone — desktop only */}
-            <div className="hidden sm:block absolute left-0 md:left-8 top-8 phone-float-2 opacity-75 z-0">
-              <HeroPhone image={HERO_PHONES.left.image} brand={HERO_PHONES.left.mockupBrand} size={420} />
+            {/* Left phone */}
+            <div className="absolute left-0 md:left-8 top-8 phone-float-2 opacity-75 z-0">
+              <HeroPhone
+                image={HERO_PHONES.left.image}
+                brand={HERO_PHONES.left.mockupBrand}
+                size={420}
+                style={{ maxWidth: "27vw", maxHeight: "44vw" }}
+              />
             </div>
 
-            {/* Center phone — always visible */}
+            {/* Center phone */}
             <div className="relative z-10 phone-float">
               <HeroPhone image={HERO_PHONES.center.image} brand={HERO_PHONES.center.mockupBrand} size={580} />
             </div>
 
-            {/* Right phone — desktop only */}
+            {/* Right phone */}
             <div
-              className="hidden sm:block absolute right-0 md:right-8 top-16 phone-float opacity-70 z-0"
+              className="absolute right-0 md:right-8 top-16 phone-float opacity-70 z-0"
               style={{ animationDelay: "2s" }}
             >
-              <HeroPhone image={HERO_PHONES.right.image} brand={HERO_PHONES.right.mockupBrand} size={380} />
+              <HeroPhone
+                image={HERO_PHONES.right.image}
+                brand={HERO_PHONES.right.mockupBrand}
+                size={380}
+                style={{ maxWidth: "27vw", maxHeight: "44vw" }}
+              />
             </div>
 
             {/* Price tag — top right */}

@@ -93,7 +93,7 @@ export default function StorePage() {
       </div>
 
       <div className="max-w-7xl mx-auto px-3 sm:px-6 py-10">
-        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 lg:items-start">
           <StoreFilters
             filters={filters}
             onChange={setFilters}
@@ -102,7 +102,7 @@ export default function StorePage() {
             colors={colors}
           />
 
-          <div className="flex-1 min-w-0">
+          <div className="flex-1 min-w-0 w-full">
             {filtered.length === 0 ? (
               <div className="text-center py-20">
                 <p className="text-4xl mb-4">🔍</p>
