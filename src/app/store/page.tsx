@@ -45,7 +45,7 @@ export default function StorePage() {
   }, [filtered]);
 
   return (
-    <div className="page-transition min-h-screen bg-white">
+    <div className="page-transition min-h-screen bg-white overflow-x-hidden">
       {/* Hero bar */}
       <div
         className="pt-28 pb-14 px-6 text-center relative overflow-hidden"
@@ -92,7 +92,7 @@ export default function StorePage() {
         </motion.div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 py-10">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 py-10">
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
           <StoreFilters
             filters={filters}
@@ -127,7 +127,7 @@ export default function StorePage() {
                       <span className="text-sm text-dark/35 font-medium">{items.length} phone{items.length !== 1 ? "s" : ""}</span>
                     </div>
 
-                    <div className="grid grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-5">
+                    <div className="grid grid-cols-2 xl:grid-cols-3 gap-2 sm:gap-5">
                       <AnimatePresence>
                         {items.map((product) => (
                           <ProductCard key={product.id} product={product} />

@@ -57,7 +57,12 @@ function HeroPhone({
         src={image}
         alt={brand}
         className={className}
-        style={{ width: size * 0.48, height: size, objectFit: "contain", ...style }}
+        style={{
+          width: `min(${size * 0.48}px, 44vw)`,
+          height: `min(${size}px, 68vw)`,
+          objectFit: "contain",
+          ...style,
+        }}
       />
     );
   }
@@ -151,23 +156,23 @@ export default function Hero() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3, ease: [0.23, 1, 0.32, 1] }}
-            className="relative w-full max-w-5xl h-[540px] md:h-[800px] mx-auto flex items-center justify-center"
+            className="relative w-full max-w-5xl h-[380px] sm:h-[500px] md:h-[800px] mx-auto flex items-center justify-center"
           >
             <div className="absolute w-[520px] h-[520px] bg-primary/20 rounded-full blur-3xl" />
 
-            {/* Left phone */}
-            <div className="absolute left-0 md:left-8 top-8 phone-float-2 opacity-75 z-0">
+            {/* Left phone — desktop only */}
+            <div className="hidden sm:block absolute left-0 md:left-8 top-8 phone-float-2 opacity-75 z-0">
               <HeroPhone image={HERO_PHONES.left.image} brand={HERO_PHONES.left.mockupBrand} size={420} />
             </div>
 
-            {/* Center phone */}
+            {/* Center phone — always visible */}
             <div className="relative z-10 phone-float">
               <HeroPhone image={HERO_PHONES.center.image} brand={HERO_PHONES.center.mockupBrand} size={580} />
             </div>
 
-            {/* Right phone */}
+            {/* Right phone — desktop only */}
             <div
-              className="absolute right-0 md:right-8 top-16 phone-float opacity-70 z-0"
+              className="hidden sm:block absolute right-0 md:right-8 top-16 phone-float opacity-70 z-0"
               style={{ animationDelay: "2s" }}
             >
               <HeroPhone image={HERO_PHONES.right.image} brand={HERO_PHONES.right.mockupBrand} size={380} />
