@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #62b6cb;
+  --secondary: #bee9e8;
+  --white: #ffffff;
+  --dark: #0d1b2a;
+  --dark-2: #1b2a3b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #ffffff;
+  color: #0d1b2a;
+  overflow-x: hidden;
+}
+
+/* ─── Glass Button ─── */
+.glass-btn {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.45) 0%,
+    rgba(190, 233, 232, 0.25) 100%
+  );
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow:
+    0 8px 32px rgba(98, 182, 203, 0.22),
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.75),
+    inset 0 -1px 0 rgba(98, 182, 203, 0.18);
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+}
+
+.glass-btn:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(190, 233, 232, 0.4) 100%
+  );
+  box-shadow:
+    0 12px 40px rgba(98, 182, 203, 0.38),
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 0 rgba(98, 182, 203, 0.25);
+  transform: translateY(-2px);
+}
+
+.glass-btn:active {
+  transform: translateY(0px);
+}
+
+/* ─── Glass Card ─── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(190, 233, 232, 0.4);
+  box-shadow: 0 8px 32px rgba(98, 182, 203, 0.1);
+}
+
+/* ─── Glass Nav ─── */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(190, 233, 232, 0.35);
+  box-shadow:
+    0 4px 24px rgba(98, 182, 203, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+/* ─── Primary Button ─── */
+.btn-primary {
+  background: linear-gradient(135deg, #62b6cb 0%, #4a9ab5 100%);
+  color: white;
+  border: none;
+  box-shadow:
+    0 8px 24px rgba(98, 182, 203, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #4a9ab5 0%, #3a8aa5 100%);
+  box-shadow:
+    0 12px 32px rgba(98, 182, 203, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* ─── Phone Float — GPU-only translateY, no perspective in keyframes ─── */
+.phone-float {
+  will-change: transform;
+  animation: floatUp 6s ease-in-out infinite;
+  filter: drop-shadow(0 30px 50px rgba(98, 182, 203, 0.3));
+}
+
+@keyframes floatUp {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-26px); }
+}
+
+.phone-float-2 {
+  will-change: transform;
+  animation: floatDown 7s ease-in-out infinite;
+  filter: drop-shadow(0 30px 50px rgba(190, 233, 232, 0.3));
+}
+
+@keyframes floatDown {
+  0%, 100% { transform: translateY(-12px); }
+  50%       { transform: translateY(12px); }
+}
+
+/* ─── Gradient Text ─── */
+.gradient-text {
+  background: linear-gradient(135deg, #62b6cb 0%, #bee9e8 50%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-dark {
+  background: linear-gradient(135deg, #0d1b2a 0%, #62b6cb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Scroll Bar ─── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f0fafa;
+}
+::-webkit-scrollbar-thumb {
+  background: #62b6cb;
+  border-radius: 3px;
+}
+
+/* ─── Section Transitions ─── */
+.section-fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.section-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Shimmer Loading ─── */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(190, 233, 232, 0.3) 0%,
+    rgba(98, 182, 203, 0.5) 50%,
+    rgba(190, 233, 232, 0.3) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* ─── Orb Glow — static, no animation (blur + scale animation is very expensive) ─── */
+.orb {
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.7;
+  will-change: auto;
+}
+
+/* ─── Input Styles ─── */
+.input-glass {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1.5px solid rgba(98, 182, 203, 0.3);
+  border-radius: 12px;
+  transition: all 0.25s ease;
+  outline: none;
+}
+
+.input-glass:focus {
+  border-color: #62b6cb;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 0 4px rgba(98, 182, 203, 0.12);
+}
+
+/* ─── Page Loader ─── */
+.page-transition {
+  animation: pageIn 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
