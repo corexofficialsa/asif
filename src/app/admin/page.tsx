@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { Eye, EyeOff, LogIn } from "lucide-react";
 import { useAppStore } from "@/lib/store";
+import Image from "next/image";
 
 export default function AdminLoginPage() {
   const router = useRouter();
@@ -50,13 +51,9 @@ export default function AdminLoginPage() {
       >
         {/* Logo */}
         <div className="text-center mb-8">
-          <svg height="48" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="mx-auto mb-4">
-            <circle cx="7" cy="20" r="5" fill="#62b6cb" />
-            <circle cx="7" cy="20" r="3" fill="#bee9e8" />
-            <text x="18" y="28" fontFamily="Inter, system-ui" fontWeight="800" fontSize="22" letterSpacing="2" fill="white">ASIF</text>
-            <rect x="18" y="32" width="92" height="2.5" rx="1.25" fill="#62b6cb" />
-            <circle cx="80" cy="10" r="2.5" fill="#bee9e8" />
-          </svg>
+          <div className="flex justify-center mb-4">
+            <Image src="/ab-logo.png" alt="ASIF" width={72} height={72} style={{ objectFit: "contain" }} />
+          </div>
           <p className="text-white/40 text-sm">Admin Dashboard</p>
         </div>
 

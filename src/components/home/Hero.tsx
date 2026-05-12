@@ -57,6 +57,8 @@ function HeroPhone({
         src={image}
         alt={brand}
         className={className}
+        fetchPriority="high"
+        decoding="async"
         style={{
           width: `min(${size * 0.48}px, 44vw)`,
           height: `min(${size}px, 68vw)`,
@@ -83,7 +85,7 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen bg-dark overflow-hidden flex flex-col items-center justify-center"
+      className="relative min-h-screen min-h-[100dvh] bg-dark overflow-hidden flex flex-col items-center justify-center"
     >
       {/* Orbs */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 orb pointer-events-none" />
@@ -103,9 +105,9 @@ export default function Hero() {
       <div className="relative z-10 w-full max-w-6xl mx-auto px-6 pt-28 pb-16 flex flex-col items-center text-center">
         {/* Badge */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.35 }}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-btn mb-8"
         >
           <Star size={13} className="text-primary fill-primary" />
@@ -116,9 +118,9 @@ export default function Hero() {
 
         {/* Heading */}
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
+          transition={{ duration: 0.4, delay: 0.05 }}
           className="text-5xl sm:text-6xl lg:text-8xl font-black text-white leading-[1.02] tracking-tight mb-6"
         >
           Phones for prices
@@ -127,9 +129,9 @@ export default function Hero() {
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
+          transition={{ duration: 0.4, delay: 0.1 }}
           className="text-white/45 text-lg max-w-xl mb-10 leading-relaxed"
         >
           New &amp; used iPhones, Samsung Galaxy, and Google Pixels — all genuine, all tested, at unbeatable prices in the heart of Balad, Jeddah.
@@ -137,9 +139,9 @@ export default function Hero() {
 
         {/* Buttons */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
+          transition={{ duration: 0.4, delay: 0.15 }}
           className="flex flex-wrap justify-center gap-3 mb-16"
         >
           <Link href="/store" className="btn-primary flex items-center gap-2 px-8 py-4 rounded-2xl font-bold text-sm">
@@ -153,9 +155,9 @@ export default function Hero() {
         {/* Phones — scroll-driven parallax wrapper */}
         <motion.div style={{ y: phonesY }} className="w-full">
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.3, ease: [0.23, 1, 0.32, 1] }}
+            transition={{ duration: 0.7, delay: 0.2, ease: [0.23, 1, 0.32, 1] }}
             className="relative w-full max-w-5xl h-[380px] sm:h-[500px] md:h-[800px] mx-auto flex items-center justify-center"
           >
             <div className="absolute w-[520px] h-[520px] bg-primary/20 rounded-full blur-3xl" />
@@ -214,7 +216,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.6 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
           className="flex flex-wrap justify-center gap-10 mt-10"
         >
           {[

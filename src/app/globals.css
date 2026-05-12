@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -23,7 +21,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
   background: #ffffff;
   color: #0d1b2a;
   overflow-x: hidden;
@@ -206,10 +204,5 @@ body {
 
 /* ─── Page Loader ─── */
 .page-transition {
-  animation: pageIn 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-@keyframes pageIn {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
+  opacity: 1;
 }

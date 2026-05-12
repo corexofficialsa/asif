@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { MapPin, Phone, Mail, Instagram } from "lucide-react";
-import Logo from "./Logo";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -11,13 +11,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="mb-4">
-              <svg height="36" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="7" cy="20" r="5" fill="#62b6cb" />
-                <circle cx="7" cy="20" r="3" fill="#bee9e8" />
-                <text x="18" y="28" fontFamily="Inter, system-ui" fontWeight="800" fontSize="22" letterSpacing="2" fill="white">ASIF</text>
-                <rect x="18" y="32" width="92" height="2.5" rx="1.25" fill="#62b6cb" />
-                <circle cx="80" cy="10" r="2.5" fill="#bee9e8" />
-              </svg>
+              <Image src="/ab-logo.png" alt="ASIF" width={52} height={52} style={{ objectFit: "contain" }} />
             </div>
             <p className="text-white/50 text-sm leading-relaxed max-w-xs">
               Jeddah's most trusted smartphone destination. New &amp; used phones at prices you won't find anywhere else in Balad.

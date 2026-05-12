@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { LayoutDashboard, Package, BarChart3, LogOut, Menu, X } from "lucide-react";
 import { useAppStore } from "@/lib/store";
+import Image from "next/image";
 import OrdersTab from "@/components/admin/OrdersTab";
 import StockTab from "@/components/admin/StockTab";
 import AnalyticsTab from "@/components/admin/AnalyticsTab";
@@ -41,13 +42,7 @@ export default function DashboardPage() {
     <div className="flex flex-col h-full">
       {/* Logo */}
       <div className="p-6 border-b border-white/8">
-        <svg height="32" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="7" cy="20" r="5" fill="#62b6cb" />
-          <circle cx="7" cy="20" r="3" fill="#bee9e8" />
-          <text x="18" y="28" fontFamily="Inter, system-ui" fontWeight="800" fontSize="22" letterSpacing="2" fill="white">ASIF</text>
-          <rect x="18" y="32" width="92" height="2.5" rx="1.25" fill="#62b6cb" />
-          <circle cx="80" cy="10" r="2.5" fill="#bee9e8" />
-        </svg>
+        <Image src="/ab-logo.png" alt="ASIF" width={44} height={44} style={{ objectFit: "contain" }} />
         <p className="text-white/30 text-xs mt-1">Admin Panel</p>
       </div>
 
